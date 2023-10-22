@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@inertiajs/progress": "^0.2.7",
     "@inertiajs/svelte": "^1.0.12",
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
     "svelte": "^4.2.2",
