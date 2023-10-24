@@ -15,7 +15,6 @@ class PeopleController < ApplicationController
     @person = Person.new
   end
 
-  # GET /people/1/edit
   def edit
   end
 
@@ -25,33 +24,34 @@ class PeopleController < ApplicationController
     if @person.save
       redirect_to @person, notice: "Person was successfully created."
     else
-      # render :new, status: :unprocessable_entity
-      render inertia: 'people/new' 
+      render inertia: 'people/new', props: { 
+        person: @person,
+        errors: @person.errors
+      }
     end
   end
 
-  # PATCH/PUT /people/1
   def update
     if @person.update(person_params)
-      redirect_to @person, notice: "Person was successfully updated.", status: :see_other
+      redirect_to @person, notice: "Person was successfully updated."
     else
-      render :edit, status: :unprocessable_entity
+      render inertia: 'people/edit', props: { 
+        person: @person,
+        errors: @person.errors
+      }
     end
   end
 
-  # DELETE /people/1
   def destroy
     @person.destroy!
     redirect_to people_url, notice: "Person was successfully destroyed.", status: :see_other
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def person_params
       params.require(:person).permit(:first_name, :last_name)
     end

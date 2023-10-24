@@ -7,7 +7,7 @@
   export let errors = {};
 
   const submit = () => {
-    router.post(`/people`, { person });
+    router.put(`/people/${person.id}`, { person });
   };
 
   router.on("success", (event) => {
@@ -20,6 +20,6 @@
 </script>
 
 <Layout>
-  <h1>New Person</h1>
+  <h1>Edit Person</h1>
   <Form {person} {errors} on:submit={submit} />
 </Layout>
