@@ -1,34 +1,27 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
 
-  # GET /people
   def index
     @people = Person.all
-    render inertia: 'People', props: {
-      people: @people,
-      user: current_user
-    }
+    @user = current_user
   end
 
-  # GET /people/1
   def show
-    render inertia: 'Person', props: {
-      # people: @people,
-      person: Person.find(params[:id]) 
-      # user: current_user
-    }
+    @person = Person.find(params[:id]) 
+    @user = current_user
   end
 
-  # GET /people/new
   def new
     @person = Person.new
+    # @person.first_name = 'John'
+    # @person.last_name = 'Wayne'
+    @user = current_user
   end
 
   # GET /people/1/edit
   def edit
   end
 
-  # POST /people
   def create
     @person = Person.new(person_params)
 

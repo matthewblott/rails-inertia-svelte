@@ -1,7 +1,13 @@
 class HomeController < ApplicationController
+
   def index
-    render inertia: 'Home', props: {
-      name: 'Inertia Rails'
-    }
+    render inertia: 'home/index'
   end
+
+  def welcome
+  end
+
+  def about
+  end
+
 end

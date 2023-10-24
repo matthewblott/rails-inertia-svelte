@@ -38,5 +38,8 @@ module RailsInertiaSvelte
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Added for custom exception pages
+    config.exceptions_app = self.routes
   end
 end
