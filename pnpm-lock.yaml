@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  change-case:
+    specifier: ^5.1.2
+    version: 5.1.2
+
 devDependencies:
   '@inertiajs/progress':
     specifier: ^0.2.7
@@ -420,6 +425,10 @@ packages:
       get-intrinsic: 1.2.1
       set-function-length: 1.1.1
     dev: true
+
+  /change-case@5.1.2:
+    resolution: {integrity: sha512-CAtbGEDulyjzs05RXy3uKcwqeztz/dMEuAc1Xu9NQBsbrhuGMneL0u9Dj5SoutLKBFYun8txxYIwhjtLNfUmCA==}
+    dev: false
 
   /code-red@1.0.4:
     resolution: {integrity: sha512-7qJWqItLA8/VPVlKJlFXU+NBlo/qyfs39aJcuMT/2ere32ZqvF5OSxgdM5xOfJJ7O429gg2HM47y8v9P+9wrNw==}
