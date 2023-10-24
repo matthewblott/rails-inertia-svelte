@@ -16,5 +16,8 @@
     "svelte": "^4.2.2",
     "vite": "^4.3.0",
     "vite-plugin-ruby": "^3.2.0"
+  },
+  "dependencies": {
+    "change-case": "^5.1.2"
   }
 }
